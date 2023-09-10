@@ -12,7 +12,9 @@
     </style>
 </head>
 <body>
-    <h1>To Do List</h1>
+    <div class="title">
+        <h1>To Do List</h1>
+    </div>
     <br>
     <table border="1">
         <th>
@@ -26,7 +28,19 @@
         </th>
         <tr>
             <td>
-                <input type="text" name="" value="">
+                <form action="">
+                    <select name="days" id="days">
+                      <optgroup label="Hari">
+                        <option value="senin">Senin</option>
+                        <option value="selasa">Selasa</option>
+                        <option value="rabu">Rabu</option>
+                        <option value="kamis">Kamis</option>
+                        <option value="jumat">Jumat</option>
+                        <option value="sabtu">Sabtu</option>
+                        <option value="minggu">Minggu</option>
+                      </optgroup>
+                    </select>
+                  </form>
             </td>
             <td>
                 <input type="text">
@@ -36,11 +50,11 @@
                 <label for="checkbox">Selesai</label>
             </td>
             <td class="no-border-button">
-                <button onclick="deleteRow()" >Hapus</button>
+                <button onclick="deleteRow()" ><b>Hapus</b></button>
             </td>
         </tr>
     </table>
-    <button onclick="addNewRow()">Tambah</button>
+    <button onclick="addNewRow()"><strong>Tambah</strong></button>
     <script>
         function addNewRow() {
             const table = document.querySelector('table');
@@ -59,18 +73,24 @@
 
             // Create a cell for "Status" and add a checkbox element
             const statusCell = newRow.insertCell(2);
+            statusCell.classList.add('no-border-button');
             const statusCheckbox = document.createElement('input');
             statusCheckbox.type = 'checkbox';
+            statusCheckbox.classList.add('no-border-button');
             statusCell.appendChild(statusCheckbox);
             const statusLabel = document.createElement('label');
             statusLabel.htmlFor = 'checkbox';
             statusLabel.textContent = 'Selesai';
             statusCell.appendChild(statusLabel);
+            
 
             // Create a cell for the "Hapus" button
             const deleteCell = newRow.insertCell(3);
+            deleteCell.classList.add('no-border-button');
             const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Hapus';
+            const deleteButtonText = document.createElement('b'); // Create a <b> element
+            deleteButtonText.textContent = 'Hapus'; // Set the text content of the <b> element
+            deleteButton.appendChild(deleteButtonText);
             deleteButton.onclick = function () {
                 table.deleteRow(newRow.rowIndex);
             };
@@ -79,32 +99,37 @@
     </script>
     <br><br>
 </body>
-<audio controls loop src="sound.mp3"></audio>
-
-<footer>
-    <p>Author: Ihsan Widagdo</p>
-    <img src="foto jahim.jpg" width="100px" alt="">
-    <br>
-    <p>Web ini dibuat dengan : 
-        <ul>
-            <li>
-                html
-            </li>
-            <li>
-                css
-            </li>
-            <li>
-                javascript
-            </li>
-        </ul>
-    </p>
-    <p>Referensi :
-        <ol>
-            <li>
-                <a href="https://www.w3schools.com/html/" target="_blank">https://www.w3schools.com/html/</a>
-            </li>
-        </ol>
-    </p>
-    <p>Repositori : <a href="https://github.com/dagdo03/tugas1-pweb-i" target="_blank">https://github.com/dagdo03/tugas1-pweb-i</a></p>
-  </footer>
+<div class="footer">
+    <section>
+        <audio controls loop src="sound.mp3"></audio>
+        <footer>
+            <p>Author: Ihsan Widagdo</p>
+            <img src="foto jahim.jpg" width="100px" alt="">
+            <br>
+            <p>Web ini dibuat dengan : 
+                <ul>
+                    <li>
+                        html
+                    </li>
+                    <li>
+                        css
+                    </li>
+                    <li>
+                        javascript
+                    </li>
+                </ul>
+            </p>
+            <p>Referensi :
+                <ol>
+                    <li>
+                        <a href="https://www.w3schools.com/html/" target="_blank">https://www.w3schools.com/html/</a>
+                    </li>
+                </ol>
+            </p>
+            <p>Repositori : <a href="https://github.com/dagdo03/tugas1-pweb-i" target="_blank">https://github.com/dagdo03/tugas1-pweb-i</a></p>
+            <p>note : <strike>Jangan <span style="color: blue;">copas</span> code saya untuk tugas anda ya :)</strike></p>
+        </footer>
+    </section>
+    
+</div>
 </html>
