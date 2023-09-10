@@ -1,3 +1,3 @@
-Nama  : Ihsan Widagdo
-NRP   : 5025211231
+Nama  : Ihsan Widagdo\n
+NRP   : 5025211231\n
 Kelas : I
