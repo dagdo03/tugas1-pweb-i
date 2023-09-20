@@ -3,58 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
     <title>Todolist</title>
-    <style>
-        /* Add your CSS styles here */
-        .no-border-button {
-            border: none; /* Remove button border */
-        }
-    </style>
 </head>
 <body>
     <div class="title">
-        <h1 >To Do List</h1>
+        <h1 style="text-align: center;" >To Do List</h1>
     </div>
     <br>
-    <table border="1">
-        <th>
-            Hari
-        </th>
-        <th>
-            Kegiatan
-        </th>
-        <th  colspan="2">
-            Status
-        </th>
-        <tr>
-            <td>
-                <form action="">
-                    <select name="days" id="days">
-                      <optgroup label="Hari">
-                        <option value="senin">Senin</option>
-                        <option value="selasa">Selasa</option>
-                        <option value="rabu">Rabu</option>
-                        <option value="kamis">Kamis</option>
-                        <option value="jumat">Jumat</option>
-                        <option value="sabtu">Sabtu</option>
-                        <option value="minggu">Minggu</option>
-                      </optgroup>
-                    </select>
-                  </form>
-            </td>
-            <td>
-                <input type="text">
-            </td>
-            <td class="no-border-button">
-                <input type="checkbox" class="no-border-button" name="checkbox">
-                <label for="checkbox">Selesai</label>
-            </td>
-            <td class="no-border-button">
-                <button style="background-color: aquamarine;" onclick="deleteRow()" ><b>Hapus</b></button>
-            </td>
-        </tr>
-    </table>
-    <button onclick="addNewRow()"><strong>Tambah</strong></button>
+    <div class="table">
+        <table>
+            <th>
+                Hari
+            </th>
+            <th>
+                Kegiatan
+            </th>
+            <th  colspan="2">
+                Status
+            </th>
+            <tr>
+                <td>
+                    <form action="">
+                        <select name="days" id="days">
+                          <optgroup label="Hari">
+                            <option value="senin">Senin</option>
+                            <option value="selasa">Selasa</option>
+                            <option value="rabu">Rabu</option>
+                            <option value="kamis">Kamis</option>
+                            <option value="jumat">Jumat</option>
+                            <option value="sabtu">Sabtu</option>
+                            <option value="minggu">Minggu</option>
+                          </optgroup>
+                        </select>
+                      </form>
+                </td>
+                <td>
+                    <input type="text">
+                </td>
+                <td class="no-border-button">
+                    <input type="checkbox" class="no-border-button" name="checkbox">
+                    <label for="checkbox">Selesai</label>
+                </td>
+                <td class="no-border-button">
+                    <button style="background-color: aquamarine;" onclick="deleteRow()" ><b>Hapus</b></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="addButton">
+        <button onclick="addNewRow()"><strong>Tambah</strong></button>
+    </div>
     <script>
         function addNewRow() {
             const table = document.querySelector('table');
@@ -90,6 +89,7 @@
             const deleteButton = document.createElement('button');
             const deleteButtonText = document.createElement('b'); // Create a <b> element
             deleteButtonText.textContent = 'Hapus'; // Set the text content of the <b> element
+            deleteButton.style.backgroundColor = 'aquamarine';
             deleteButton.appendChild(deleteButtonText);
             deleteButton.onclick = function () {
                 table.deleteRow(newRow.rowIndex);
@@ -99,13 +99,23 @@
     </script>
     <br><br>
 </body>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<footer>
+    <p>note : <strike>Jangan <span style="color: blue;">copas</span> code saya untuk tugas anda ya :)</strike></p>
+</footer>
 <div class="footer">
-    <section>
-        <audio controls loop src="assets/sound.mp3"></audio>
-        <footer>
+        <section>
+            <p>Play Music :</p>
+            <br>
+            <audio controls loop src="assets/sound.mp3"></audio>
+        </section>
+        <section>
             <p>Author: Ihsan Widagdo</p>
             <img src="assets/foto jahim.jpg" width="50px" alt="">
             <br>
+        </section>
+        <section>
             <p>Web ini dibuat dengan : 
                 <ul>
                     <li>
@@ -119,6 +129,8 @@
                     </li>
                 </ul>
             </p>
+        </section>
+        <section>
             <p>Referensi :
                 <ol>
                     <li>
@@ -127,9 +139,6 @@
                 </ol>
             </p>
             <p>Repositori : <a href="https://github.com/dagdo03/tugas1-pweb-i" target="_blank">https://github.com/dagdo03/tugas1-pweb-i</a></p>
-            <p>note : <strike>Jangan <span style="color: blue;">copas</span> code saya untuk tugas anda ya :)</strike></p>
-        </footer>
-    </section>
-    
+        </section>
 </div>
 </html>
