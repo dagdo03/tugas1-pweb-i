@@ -1,5 +1,6 @@
 body {
     min-height: 100vh;
+    background-color: #e9e7e7;
 }
 
 th {
@@ -24,7 +25,7 @@ th {
     bottom: 0cm;
     color: #fff;
     padding: 10px;
-    text-align: center;
+    text-align: left;
     display: flex;
     justify-content: space-between; /* Distribute columns evenly */
 }
@@ -34,18 +35,26 @@ th {
     margin: 0 10px; /* Add some space between columns */
 }
 
-/* @keyframes grow {
-    0% {
-      transform: scaleX(1.1);
-    }
-    50% {
-      transform: scaleX(1.8);
-      background: darkturquoise;
-    }
-  }
-.grower {
-    width: 200px;
-    height: 80px;
-    background: lightseagreen;
-    position: relative;
-  } */
+/* Apply the initial styles to the image and the image container */
+.image-container {
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  overflow: hidden; /* This hides any part of the image that exceeds the container size */
+  transition: transform 0.3s; /* Add a smooth transition effect to the transform property */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s; /* Apply the same transition to the image for consistency */
+}
+
+/* Add a hover effect to the image when hovering over the section */
+section:hover .image-container {
+  transform: scale(1.2); /* Scale up the image container on hover */
+}
+
+section:hover .image-container img {
+  transform: scale(1.2); /* Scale up the image on hover */
+}
