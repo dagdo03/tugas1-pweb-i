@@ -1,4 +1,4 @@
-Tugas 3 cloning
+Tugas 3 cloning  
 Nama  : Ihsan Widagdo  
 NRP   : 5025211231  
 Kelas : I
